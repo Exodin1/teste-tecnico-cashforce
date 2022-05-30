@@ -1,22 +1,18 @@
 'use strict'
-// INSERT INTO `cnpjs` (`id`, `cnpj`, `companyType`, `createdAt`, `updatedAt`) VALUES
-// (1, '00000000000001', '2', '2020-10-29 21:20:33', '2020-10-29 21:20:33'),
-// (2, '00000000000002', '1', '2020-10-29 21:20:33', '2020-10-29 21:20:33');
-
 module.exports = {
   async up(queryInterface) {
     await queryInterface.bulkInsert('cnpjs', [{
       id: 1,
       cnpj: '00000000000001',
       companyType: '2',
-      createdAt: '2020-10-29 21:20:33',
-      updatedAt: '2020-10-29 21:20:33'
+      createdAt: new Date(),
+      updatedAt: new Date()
     }, {
       id: 2,
       cnpj: '00000000000002',
       companyType: '1',
-      createdAt: '2020-10-29 21:20:33',
-      updatedAt: '2020-10-29 21:20:33'
+      createdAt: new Date(),
+      updatedAt: new Date()
     }])
   },
 
