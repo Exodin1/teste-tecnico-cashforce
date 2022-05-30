@@ -27,11 +27,11 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   })
 
-  // Buyer.associate = models => {
-  //   Buyer.hasMany(models.Product, {
-  //     foreignKey: 'buyerId',
-  //     as: 'products'
-  //   })
-  // }
+  Buyer.associate = (models) => {
+    Buyer.belongsTo(models.Cnpj, {
+      foreignKey: 'cnpjId',
+      as: 'cnpj'
+    })
+  }
   return Buyer
 }
