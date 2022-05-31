@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => {
-  const Buyer = sequelize.define('Buyer', {
+const Buyer = (sequelize, DataTypes) => {
+  return sequelize.define('Buyer', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -23,9 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     confirm: { type: DataTypes.BOOLEAN },
     email: { type: DataTypes.STRING }
   }, {
-    sequelize,
     tableName: 'buyers',
-    modelName: 'Buyer',
     timestamps: false
   })
 
@@ -35,5 +33,6 @@ module.exports = (sequelize, DataTypes) => {
   //     as: 'cnpj'
   //   })
   // }
-  return Buyer
 }
+
+module.exports = Buyer

@@ -1,6 +1,5 @@
-'use strict'
-module.exports = (sequelize, DataTypes) => {
-  const sponsors = sequelize.init({
+const Sponsor = (sequelize, DataTypes) => {
+  return sequelize.define('Sponsor', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -28,5 +27,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'sponsors',
   })
-  return sponsors
 }
+
+module.exports = Sponsor

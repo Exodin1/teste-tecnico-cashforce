@@ -1,6 +1,5 @@
-'use strict'
-module.exports = (sequelize, DataTypes) => {
-  const providers = sequelize.define({
+const Provider = (sequelize, DataTypes) => {
+  return sequelize.define('Provider', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -29,5 +28,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'providers',
   })
-  return providers
 }
+
+module.exports = Provider

@@ -1,6 +1,5 @@
-'use strict'
-module.exports = (sequelize, DataTypes) => {
-  const orderPortions = sequelize.define({
+const Orderportion = (sequelize, DataTypes) => {
+  return sequelize.define('Orderportion', {
     nDup: { type: DataTypes.STRING },
     dVenc: { type: DataTypes.STRING },
     vDup: { type: DataTypes.STRING },
@@ -9,5 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'orderportions',
   })
-  return orderPortions
 }
+
+module.exports = Orderportion
