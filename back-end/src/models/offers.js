@@ -1,20 +1,20 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const offers = sequelize.define('offers', {
-    tax: DataTypes.STRING,
-    tariff: DataTypes.STRING,
-    adValorem: DataTypes.STRING,
-    float: DataTypes.STRING,
-    iof: DataTypes.STRING,
-    expiresIn: DataTypes.DATE,
-    paymentStatusSponsor: DataTypes.TINYINT,
-    paymentStatusProvider: DataTypes.TINYINT,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE,
-    orderId: DataTypes.INTEGER,
-    sponsorId: DataTypes.INTEGER
+    tax: { type: DataTypes.STRING },
+    tariff: { type: DataTypes.STRING },
+    adValorem: { type: DataTypes.STRING },
+    float: { type: DataTypes.STRING },
+    iof: { type: DataTypes.STRING },
+    expiresIn: { type: DataTypes.DATE },
+    paymentStatusSponsor: { type: DataTypes.TINYINT },
+    paymentStatusProvider: { type: DataTypes.TINYINT },
+    createdAt: { type: DataTypes.DATE },
+    updatedAt: { type: DataTypes.DATE },
+    orderId: { type: DataTypes.INTEGER },
+    sponsorId: { type: DataTypes.INTEGER }
   }, {
-    modelName: 'offers',
+    tableName: 'offers',
   })
   return offers
 }

@@ -1,13 +1,13 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const orderPortions = sequelize.define({
-    nDup: DataTypes.STRING,
-    dVenc: DataTypes.STRING,
-    vDup: DataTypes.STRING,
-    availableToMarket: DataTypes.BOOLEAN,
-    orderId: DataTypes.INTEGER
+    nDup: { type: DataTypes.STRING },
+    dVenc: { type: DataTypes.STRING },
+    vDup: { type: DataTypes.STRING },
+    availableToMarket: { type: DataTypes.BOOLEAN },
+    orderId: { type: DataTypes.INTEGER }
   }, {
-    modelName: 'orderportions',
+    tableName: 'orderportions',
   })
   return orderPortions
 }

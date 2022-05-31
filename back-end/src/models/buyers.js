@@ -1,37 +1,39 @@
 module.exports = (sequelize, DataTypes) => {
   const Buyer = sequelize.define('Buyer', {
-    name: DataTypes.STRING,
-    tradingName: DataTypes.STRING,
-    cashforceTax: DataTypes.STRING,
-    responsibleName: DataTypes.STRING,
-    responsibleEmail: DataTypes.STRING,
-    responsiblePosition: DataTypes.STRING,
-    responsiblePhone: DataTypes.STRING,
-    responsibleMobile: DataTypes.STRING,
-    website: DataTypes.STRING,
-    postalCode: DataTypes.STRING,
-    address: DataTypes.STRING,
-    number: DataTypes.STRING,
-    complement: DataTypes.STRING,
-    neighborhood: DataTypes.STRING,
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    phoneNumber: DataTypes.STRING,
-    situation: DataTypes.STRING,
-    situationDate: DataTypes.STRING,
-    cnpjId: DataTypes.INTEGER,
-    confirm: DataTypes.BOOLEAN,
-    email: DataTypes.STRING
+    name: { type: DataTypes.STRING },
+    tradingName: { type: DataTypes.STRING },
+    cashforceTax: { type: DataTypes.STRING },
+    responsibleName: { type: DataTypes.STRING },
+    responsibleEmail: { type: DataTypes.STRING },
+    responsiblePosition: { type: DataTypes.STRING },
+    responsiblePhone: { type: DataTypes.STRING },
+    responsibleMobile: { type: DataTypes.STRING },
+    website: { type: DataTypes.STRING },
+    postalCode: { type: DataTypes.STRING },
+    address: { type: DataTypes.STRING },
+    number: { type: DataTypes.STRING },
+    complement: { type: DataTypes.STRING },
+    neighborhood: { type: DataTypes.STRING },
+    city: { type: DataTypes.STRING },
+    state: { type: DataTypes.STRING },
+    phoneNumber: { type: DataTypes.STRING },
+    situation: { type: DataTypes.STRING },
+    situationDate: { type: DataTypes.STRING },
+    cnpjId: { type: DataTypes.INTEGER },
+    confirm: { type: DataTypes.BOOLEAN },
+    email: { type: DataTypes.STRING }
   }, {
+    sequelize,
     tableName: 'buyers',
+    modelName: 'Buyer',
     timestamps: false
   })
 
-  Buyer.associate = (models) => {
-    Buyer.belongsTo(models.Cnpj, {
-      foreignKey: 'cnpjId',
-      as: 'cnpj'
-    })
-  }
+  // Buyer.associate = (models) => {
+  //   Buyer.belongsTo(models.Cnpj, {
+  //     foreignKey: 'cnpjId',
+  //     as: 'cnpj'
+  //   })
+  // }
   return Buyer
 }
