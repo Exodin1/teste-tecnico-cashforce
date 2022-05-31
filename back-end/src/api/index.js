@@ -2,6 +2,7 @@ const express = require('express')
 require('dotenv').config()
 const { getAllBuyers } = require('./controllers/buyersController')
 const { getAllProviders } = require('./controllers/providersController')
+const { getAllOrders } = require('./controllers/ordersController')
 const app = express()
 const port = process.env.PORT || 3002
 
@@ -12,6 +13,4 @@ app.get('/buyers', getAllBuyers)
 
 app.get('/providers', getAllProviders)
 
-app.get('/orders', (req, res) => {
-  res.send('get orders')
-})
+app.get('/orders', getAllOrders)
