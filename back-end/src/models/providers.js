@@ -1,5 +1,6 @@
-const Provider = (sequelize, DataTypes) => {
-  return sequelize.define('Provider', {
+
+module.exports = (sequelize, DataTypes) => {
+  const Provider = sequelize.define('Provider', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -28,6 +29,10 @@ const Provider = (sequelize, DataTypes) => {
   }, {
     tableName: 'providers',
   })
+  Provider.associate = (models) => {
+    Provider.belongsTo(models.Cnpj, {
+      foreignKey: 'cnpjId'
+    })
+  }
+  return Provider
 }
-
-module.exports = Provider

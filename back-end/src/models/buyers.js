@@ -1,5 +1,5 @@
-const Buyer = (sequelize, DataTypes) => {
-  return sequelize.define('Buyer', {
+module.exports = (sequelize, DataTypes) => {
+  const Buyer = sequelize.define('Buyer', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -27,12 +27,10 @@ const Buyer = (sequelize, DataTypes) => {
     timestamps: false
   })
 
-  // Buyer.associate = (models) => {
-  //   Buyer.belongsTo(models.Cnpj, {
-  //     foreignKey: 'cnpjId',
-  //     as: 'cnpj'
-  //   })
-  // }
+  Buyer.associate = (models) => {
+    Buyer.belongsTo(models.Cnpj, {
+      foreignKey: 'cnpjId'
+    })
+  }
+  return Buyer
 }
-
-module.exports = Buyer

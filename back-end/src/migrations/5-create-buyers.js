@@ -1,71 +1,68 @@
 'use strict'
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('orders', {
+    await queryInterface.createTable('buyers', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      orderNfId: {
+      name: {
         type: Sequelize.STRING
       },
-      orderNumber: {
+      tradingName: {
         type: Sequelize.STRING
       },
-      orderPath: {
+      cashforceTax: {
         type: Sequelize.STRING
       },
-      orderFileName: {
+      responsibleName: {
         type: Sequelize.STRING
       },
-      orderOriginalName: {
+      responsibleEmail: {
         type: Sequelize.STRING
       },
-      emissionDate: {
+      responsiblePosition: {
         type: Sequelize.STRING
       },
-      pdfFile: {
+      responsiblePhone: {
         type: Sequelize.STRING
       },
-      emitedTo: {
+      responsibleMobile: {
         type: Sequelize.STRING
       },
-      nNf: {
+      website: {
         type: Sequelize.STRING
       },
-      CTE: {
+      postalCode: {
         type: Sequelize.STRING
       },
-      value: {
+      address: {
         type: Sequelize.STRING
       },
-      cnpjId: {
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        type: Sequelize.INTEGER
-      },
-      buyerId: {
-        type: Sequelize.INTEGER
-      },
-      providerId: {
-        type: Sequelize.INTEGER
-      },
-      orderStatusBuyer: {
+      number: {
         type: Sequelize.STRING
       },
-      orderStatusProvider: {
+      complement: {
         type: Sequelize.STRING
       },
-      deliveryReceipt: {
+      neighborhood: {
         type: Sequelize.STRING
       },
-      cargoPackingList: {
+      city: {
         type: Sequelize.STRING
       },
-      deliveryCtrc: {
+      state: {
+        type: Sequelize.STRING
+      },
+      phoneNumber: {
+        type: Sequelize.STRING
+      },
+      situation: {
+        type: Sequelize.STRING
+      },
+      situationDate: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -75,10 +72,23 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      cnpjId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'cnpjs',
+          key: 'id'
+        }
+      },
+      confirm: {
+        type: Sequelize.BOOLEAN
+      },
+      email: {
+        type: Sequelize.STRING
       }
     })
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('orders')
+    await queryInterface.dropTable('buyers')
   }
 }

@@ -1,5 +1,5 @@
-const Offer = (sequelize, DataTypes) => {
-  return sequelize.define('Offer', {
+module.exports = (sequelize, DataTypes) => {
+  const Offer = sequelize.define('Offer', {
     tax: { type: DataTypes.STRING },
     tariff: { type: DataTypes.STRING },
     adValorem: { type: DataTypes.STRING },
@@ -15,6 +15,9 @@ const Offer = (sequelize, DataTypes) => {
   }, {
     tableName: 'offers',
   })
+  Offer.associate = (models) => {
+    Offer.belongsTo(models.Order, { foreignKey: 'orderId' })
+    Offer.belongsTo(models.Sponsor, { foreignKey: 'sponsorId' })
+  }
+  return Offer
 }
-
-module.exports = Offer

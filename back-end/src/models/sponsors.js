@@ -1,5 +1,5 @@
-const Sponsor = (sequelize, DataTypes) => {
-  return sequelize.define('Sponsor', {
+module.exports = (sequelize, DataTypes) => {
+  const Sponsor = sequelize.define('Sponsor', {
     name: { type: DataTypes.STRING },
     tradingName: { type: DataTypes.STRING },
     cashforceTax: { type: DataTypes.STRING },
@@ -27,6 +27,10 @@ const Sponsor = (sequelize, DataTypes) => {
   }, {
     tableName: 'sponsors',
   })
+  Sponsor.associate = (models) => {
+    Sponsor.belongsTo(models.Cnpj, {
+      foreignKey: 'cnpjId'
+    })
+  }
+  return Sponsor
 }
-
-module.exports = Sponsor

@@ -1,5 +1,5 @@
-const Order = (sequelize, DataTypes) => {
-  return sequelize.define('Order', {
+module.exports = (sequelize, DataTypes) => {
+  const Order = sequelize.define('Order', {
     orderNfId: { type: DataTypes.STRING },
     orderNumber: { type: DataTypes.STRING },
     orderPath: { type: DataTypes.STRING },
@@ -23,6 +23,12 @@ const Order = (sequelize, DataTypes) => {
   }, {
     tableName: 'orders',
   })
-}
+  Order.associate = models => {
+    Order.belongsTo(models.Cnpj, { foreignKey: 'cnpjId' })
+    Order.belongsTo(models.User, { foreignKey: 'userId', })
+    Order.belongsTo(models.Buyer, { foreignKey: 'buyerId' })
+    Order.belongsTo(models.Provider, { foreignKey: 'providerId' })
+  }
+  return Order
 
-module.exports = Order
+}

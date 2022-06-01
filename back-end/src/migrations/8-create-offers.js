@@ -39,10 +39,18 @@ module.exports = {
         type: Sequelize.DATE
       },
       orderId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'orders',
+          key: 'id'
+        },
       },
       sponsorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sponsors',
+          key: 'id'
+        },
       },
     })
   },

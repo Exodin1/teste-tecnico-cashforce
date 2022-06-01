@@ -1,83 +1,87 @@
 'use strict'
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('sponsors', {
+    await queryInterface.createTable('orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      orderNfId: {
         type: Sequelize.STRING
       },
-      tradingName: {
+      orderNumber: {
         type: Sequelize.STRING
       },
-      cashforceTax: {
+      orderPath: {
         type: Sequelize.STRING
       },
-      responsibleName: {
+      orderFileName: {
         type: Sequelize.STRING
       },
-      responsibleEmail: {
+      orderOriginalName: {
         type: Sequelize.STRING
       },
-      responsiblePosition: {
+      emissionDate: {
         type: Sequelize.STRING
       },
-      responsiblePhone: {
+      pdfFile: {
         type: Sequelize.STRING
       },
-      responsibleMobile: {
+      emitedTo: {
         type: Sequelize.STRING
       },
-      website: {
+      nNf: {
         type: Sequelize.STRING
       },
-      postalCode: {
+      CTE: {
         type: Sequelize.STRING
       },
-      address: {
-        type: Sequelize.STRING
-      },
-      number: {
-        type: Sequelize.STRING
-      },
-      complement: {
-        type: Sequelize.STRING
-      },
-      neighborhood: {
-        type: Sequelize.STRING
-      },
-      city: {
-        type: Sequelize.STRING
-      },
-      state: {
-        type: Sequelize.STRING
-      },
-      bank: {
-        type: Sequelize.STRING
-      },
-      bankAgency: {
-        type: Sequelize.STRING
-      },
-      account: {
-        type: Sequelize.STRING
-      },
-      phoneNumber: {
-        type: Sequelize.STRING
-      },
-      situation: {
-        type: Sequelize.STRING
-      },
-      situationDate: {
+      value: {
         type: Sequelize.STRING
       },
       cnpjId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'cnpjs',
+          key: 'id'
+        },
       },
-      email: {
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        },
+      },
+      buyerId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'buyers',
+          key: 'id'
+        },
+      },
+      providerId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'providers',
+          key: 'id'
+        },
+      },
+      orderStatusBuyer: {
+        type: Sequelize.STRING
+      },
+      orderStatusProvider: {
+        type: Sequelize.STRING
+      },
+      deliveryReceipt: {
+        type: Sequelize.STRING
+      },
+      cargoPackingList: {
+        type: Sequelize.STRING
+      },
+      deliveryCtrc: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -91,6 +95,6 @@ module.exports = {
     })
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('sponsors')
+    await queryInterface.dropTable('orders')
   }
 }

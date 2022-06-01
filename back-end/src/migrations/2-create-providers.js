@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('buyers', {
+    await queryInterface.createTable('providers', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -56,6 +56,18 @@ module.exports = {
       state: {
         type: Sequelize.STRING
       },
+      bank: {
+        type: Sequelize.STRING
+      },
+      bankAgency: {
+        type: Sequelize.STRING
+      },
+      account: {
+        type: Sequelize.STRING
+      },
+      documents: {
+        type: Sequelize.STRING
+      },
       phoneNumber: {
         type: Sequelize.STRING
       },
@@ -65,6 +77,16 @@ module.exports = {
       situationDate: {
         type: Sequelize.STRING
       },
+      cnpjId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'cnpjs',
+          key: 'id'
+        }
+      },
+      email: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -72,19 +94,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      cnpjId: {
-        type: Sequelize.INTEGER,
-      },
-      confirm: {
-        type: Sequelize.BOOLEAN
-      },
-      email: {
-        type: Sequelize.STRING
       }
     })
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('buyers')
+    await queryInterface.dropTable('providers')
   }
 }

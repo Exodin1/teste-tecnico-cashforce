@@ -1,10 +1,11 @@
 'use strict'
 module.exports = {
   async up(queryInterface) {
-    await queryInterface.bulkInsert('providers', [{
-      name: 'CEDENTE 002',
-      tradingName: 'CEDENTE 002 LTDA',
-      cashforceTax: null,
+    await queryInterface.bulkInsert('buyers', [{
+      id: 1,
+      name: 'SACADO 001',
+      tradingName: 'SACADO 001 LTDA',
+      cashforceTax: '0',
       responsibleName: null,
       responsibleEmail: null,
       responsiblePosition: null,
@@ -18,21 +19,18 @@ module.exports = {
       neighborhood: null,
       city: null,
       state: null,
-      bank: null,
-      bankAgency: null,
-      account: null,
-      documents: null,
       phoneNumber: null,
       situation: null,
       situationDate: null,
       createdAt: new Date(),
       updatedAt: new Date(),
-      cnpjId: 2,
+      cnpjId: null,
+      confirm: 1,
       email: null
-    }], {})
+    }])
   },
 
   async down(queryInterface) {
-    await queryInterface.bulkDelete('providers', null, {})
+    await queryInterface.bulkDelete('buyers', null, {})
   }
 }
