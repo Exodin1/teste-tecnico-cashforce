@@ -16,7 +16,14 @@
     </ul>
     </nav>
     <div class="div-table">
-          <table>
+      <div class="title">
+          <div class="title-table">
+            <img class="handTable" src="../assets/handshake2.png" />
+            <h5 >Notas Fiscais</h5>
+          </div>
+          <div class="subtitle">Visualize as notas fiscais que você tem.</div>
+          </div>
+      <table>
         <thead>
           <tr>
               <th>NOTA FISCAL</th>
@@ -105,8 +112,24 @@ th {
 
 .table-tr {
   border-radius: 8px;
-  box-shadow: #A0A7B7 0px 0px 0px 1px;
+  box-shadow: #E7E9F0 0px 0px 0px 1px;
 }
+
+.subtitle {
+  color: #727D94;
+}
+
+.title-table {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #021b51;
+}
+
+.title {
+  padding-bottom: 30px
+}
+
 
 .div-nav {
   display: flex;
@@ -115,8 +138,8 @@ th {
 }
 
 .div-table {
-  width: 60%;
-  height: 50vh;
+  width: 75%;
+  height: 70vh;
   padding-left: 10vh;
 }
 
@@ -125,6 +148,12 @@ th {
   height: 25px;
   margin-right: 15px;
   margin-left: 10px;
+}
+
+.handTable {
+  width: 35px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .navigation {
