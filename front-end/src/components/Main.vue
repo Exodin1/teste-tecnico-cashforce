@@ -71,8 +71,16 @@
 </template>
 
 <script>
+import Api from '../services/api'
+
 export default {
+
   name: 'MainComponent',
+  mounted() {
+    Api.getAPI().then(response => {
+      console.log(response)
+    })
+  },
 
 }
 </script>
