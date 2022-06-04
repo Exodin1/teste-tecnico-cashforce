@@ -1,28 +1,24 @@
 <template>
-  <HelloWorld />
+    <MainComponent />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainComponent from './components/Main.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainComponent,
   }
 }
 </script>
 
 <style>
 * {
-  font-family: sans-serif;
+  font-family: ubuntu;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  display: flex;
 }
 
 </style>
