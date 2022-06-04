@@ -3,7 +3,7 @@
     <span class="icon">
       <img src="https://cashforce.com.br/wp-content/themes/cashforce/assets/images/logo-cashforce.svg" alt="cashforce logo">
     </span>
-</div>
+
 <div class="div-nav">
     <nav class="navigation">
       <ul>
@@ -36,51 +36,43 @@
         </thead>
 
         <tbody>
-          <tr class="table-tr">
-            <td>123</td>
+          <tr class="table-tr" v-for="data of orders" :key="data.id">
+            <td>{{data.orderNfId}}</td>
             <td>SACADO 001</td>
             <td>CEDENTE 002</td>
-            <td>01/01/2019</td>
-            <td>R$ 1.000,00</td>
-            <td>RECEBIDO</td>
+            <td>{{data.emissionDate}}</td>
+            <td>R$ {{data.value}}</td>
+            <td>{{data.orderStatusBuyer}}</td>
             <td><button class="waves-effect waves-teal btn-flat">Dados do Cedente</button></td>
-          </tr>
-          <tr class="table-tr">
-            <td>123</td>
-            <td>SACADO 001</td>
-            <td>CEDENTE 002</td>
-            <td>01/01/2019</td>
-            <td>R$ 1.000,00</td>
-            <td>RECEBIDO</td>
-            <td><button class="waves-effect waves-teal btn-flat">Dados do Cedente</button></td>
-          </tr>
-          <tr class="table-tr">
-            <td>123</td>
-            <td>SACADO 001</td>
-            <td>CEDENTE 002</td>
-            <td>01/01/2019</td>
-            <td>R$ 1.000,00</td>
-            <td>RECEBIDO</td>
-            <td><button class="waves-effect waves-teal btn-flat">Dados do Cedente</button></td>
-          </tr>
-          
+          </tr>        
         </tbody>
       </table>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
-import Api from '../services/api'
+import { api } from '../services/api.js'
 
 export default {
 
   name: 'MainComponent',
-  mounted() {
-    Api.getAPI().then(response => {
-      console.log(response)
-    })
+  data() {
+    return {
+      buyers: [],
+      providers: [],
+      orders: [],
+    }
   },
+  mounted(){
+    api.get('/cashforce').then(response => {
+      this.buyers = response.data.buyers
+      this.providers = response.data.providers
+      this.orders = response.data.orders
+
+    })
+  }
 
 }
 </script>
