@@ -7,7 +7,7 @@
       <ul>
         <li>
           <a href="#">
-            <img src="../assets/handshake.png" />
+            <img class="hand" src="../assets/handshake.png" />
             <span >Notas Fiscais</span>
           </a>
         </li>
@@ -30,6 +30,13 @@ ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+}
+
+.hand {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  margin-left: 10px;
 }
 
 .navigation {
