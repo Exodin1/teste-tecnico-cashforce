@@ -1,0 +1,33 @@
+{
+  "name": "teste-tecnico-cashforce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon back-end/src/api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exodin1/teste-tecnico-cashforce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Exodin1/teste-tecnico-cashforce/issues"
+  },
+  "homepage": "https://github.com/Exodin1/teste-tecnico-cashforce#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "eslint": "^8.15.0",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0",
+    "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.33",
+    "nodemon": "^2.0.16"
+  }
+}
