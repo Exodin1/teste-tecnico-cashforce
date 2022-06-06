@@ -9,11 +9,11 @@
 <h1 align="center">Teste Tecnico Cashforce</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{exodin1}}/teste-tecnico-cashforce?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/exodin1/teste-tecnico-cashforce?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{exodin1}}/teste-tecnico-cashforce?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/exodin1/teste-tecnico-cashforce?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{exodin1}}/teste-tecnico-cashforce?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/exodin1/teste-tecnico-cashforce?color=56BEB8">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{exodin1}}/teste-tecnico-cashforce?color=56BEB8" /> -->
 
@@ -43,8 +43,7 @@
 
 ## :dart: About ##
 
-Teste Tecnico da Cashforce consiste em criar uma API em Node utilizando express e sequelize, conectada ao banco de dados disponibilizado.
-
+Teste Tecnico da Cashforce consiste em criar uma API em Node utilizando express e sequelize e um front-end que será conectado a API 
 
 ## :rocket: Technologies ##
 
@@ -98,7 +97,7 @@ $ mocha --exit
 - Format number
 - Show the right status in front-end 
 
-Made with :heart: by <a href="https://github.com/{{exodin1}}" target="_blank">{{Eduardo Santos}}</a>
+Made with :heart: by <a href="https://github.com/{{exodin1}}" target="_blank">Eduardo Santos</a>
 
 &#xa0;
 
