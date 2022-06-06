@@ -40,8 +40,8 @@
             <td>{{data.orderNfId}}</td>
             <td>SACADO 001</td>
             <td>CEDENTE 002</td>
-            <td>{{data.emissionDate}}</td>
-            <td>R$ {{data.value}}</td>
+            <td>{{new Date(data.emissionDate).toLocaleDateString('pt-BR')}}</td>
+            <td class="value-td">R$ {{data.value}}</td>
             <td>{{data.orderStatusBuyer}}</td>
             <td><button class="waves-effect waves-teal btn-flat">Dados do Cedente</button></td>
           </tr>        
@@ -108,6 +108,10 @@ th {
   color: #A0A7B7;
   font-weight: normal;
   font: 100%/.5 sans-serif;
+}
+
+.value-td {
+  color: #00AA89;
 }
 
 .table-tr {
