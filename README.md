@@ -43,7 +43,7 @@
 
 ## :dart: About ##
 
-Teste Tecnico da Cashforce consiste em criar uma API em Node utilizando preferencialmente express e sequelize, conectada ao banco de dados disponibilizado.
+Teste Tecnico da Cashforce consiste em criar uma API em Node utilizando express e sequelize, conectada ao banco de dados disponibilizado.
 
 
 ## :rocket: Technologies ##
