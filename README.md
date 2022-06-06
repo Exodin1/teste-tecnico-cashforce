@@ -79,7 +79,7 @@ $ cd front-end
 $ npm install
 $ npm run serve
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:3002>
 ```
 
 ## :checkered_flag: Testing ##
