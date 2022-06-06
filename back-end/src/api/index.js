@@ -17,3 +17,5 @@ app.get('/providers', getAllProviders)
 app.get('/orders', getAllOrders)
 
 app.get('/cashforce', frontGet)
+
+module.exports = app
