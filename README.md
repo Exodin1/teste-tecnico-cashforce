@@ -22,7 +22,7 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{exodin1}}" target="_blank">Author</a>
+  <a href="https://github.com/exodin1" target="_blank">Author</a>
 </p>
 
 <br>
@@ -49,7 +49,7 @@ Before starting :checkered_flag:, you need to have [Vuejs](https://vuejs.org/) a
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{exodin1}}/teste-tecnico-cashforce
+$ git clone https://github.com/exodin1/teste-tecnico-cashforce
 
 # Access
 $ cd teste-tecnico-cashforce
@@ -76,6 +76,10 @@ $ mocha --exit
 
 ```
 
+## Screenshots ##
+
+<img src="images/project_screenshot.png" align="center">
+
 ## To-do ##
 
 - Front-end tests:
@@ -83,7 +87,7 @@ $ mocha --exit
 - Format number
 - Show the right status in front-end 
 
-Made with :heart: by <a href="https://github.com/{{exodin1}}" target="_blank">Eduardo Santos</a>
+Made with :heart: by <a href="https://github.com/exodin1" target="_blank">Eduardo Santos</a>
 
 &#xa0;
 
