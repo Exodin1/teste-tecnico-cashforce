@@ -91,10 +91,12 @@ $ mocha --exit
 
 ```
 
-## Testing ##
+## To-do ##
 
 - Front-end tests:
 - Deploy the project:
+- Format number
+- Show the right status in front-end 
 
 Made with :heart: by <a href="https://github.com/{{exodin1}}" target="_blank">{{Eduardo Santos}}</a>
 
